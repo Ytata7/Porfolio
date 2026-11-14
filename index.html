@@ -1,0 +1,174 @@
+HTML
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio - Junior Programmer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">MyPortfolio</h2>
+            <ul class="nav-links">
+                <li><a href="#about">Personal Info</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#java-code">Java Code</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="about" class="content-section">
+            <div class="about-container">
+                <img src="images/profile.jpg" alt="Profile Picture" class="profile-img">
+                <div class="about-text">
+                    <h1>Andrei D. de Ocampo</h1>
+                    <h3>Aspiring Junior Programmer</h3>
+                    <p>Welcome to my portfolio! I am an Information Technology student passionate about software development, network routing, and building robust console and web applications. Dedicated to writing clean, efficient code and eager to contribute technical skills to JPCS Inc.</p>
+                    <ul class="contact-info">
+                        <li><strong>Email:</strong> your.email@example.com</li>
+                        <li><strong>Location:</strong> Guimba, Nueva Ecija, Philippines</li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <h2>Educational Background</h2>
+            <div class="edu-card">
+                <h3>Bachelor of Science in Information Technology (BSIT)</h3>
+                <p class="institution">Our Lady of the Sacred Heart College of Guimba, Inc. (OLSHCO)</p>
+                <p class="year">Academic Year: 2026 – Present (Block BSIT 1D)</p>
+                <p>Relevant Coursework: Introduction to Computing (CC101), Computer Programming (CC102), Core Mathematics (MATHPLUS), and Data Structures.</p>
+            </div>
+            <div class="edu-card">
+                <h3>Senior High School</h3>
+                <p class="institution">Your Senior High School Name</p>
+                <p class="year">Graduated</p>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <p>Java, HTML5, CSS3, Basic JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Version Control</h3>
+                    <p>Git, GitHub, VS Code, IntelliJ IDEA</p>
+                </div>
+                <div class="skill-card">
+                    <h3>IT & Networking</h3>
+                    <p>Cisco Networking Fundamentals, IP Addressing, Routing Basics</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Core Competencies</h3>
+                    <p>Software Logic, Algorithmic Problem Solving, Object-Oriented Programming</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="java-code" class="content-section">
+            <h2>CC102 Final Performance Task: Java Console Game</h2>
+            <p>Below is the source code for the console-based game developed as part of the CC102 coursework.</p>
+            
+            <div class="code-container">
+                <pre><code>
+// 173
+
+import java.util.Scanner;
+
+public class Array {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int size = 15;
+        int[] originalArray = new int[size];
+        int[] rotatedArray = new int[size];
+
+        
+        System.out.println("======================ARRAY LEFT ROTATION APPLICATION======================");
+        System.out.println("Please enter " + size + " integers ranging from 0 to 100:\n");
+
+        for (int i = 0; i  < size; i++) {
+            while (true) {
+                System.out.print("Enter value for index " + i + ": ");
+                if (input.hasNextInt()) {
+                    int value = input.nextInt();
+                    if (value >= 0 && value <= 100) {
+                        originalArray[i] = value;
+                        break;
+                    } else {
+                        System.out.println("  -> Error: Value must be between 0 and 100. Try again.");
+                    }
+                } else {
+                    System.out.println("  -> Error: Invalid input. Please enter a valid integer.");
+                    input.next();
+                }
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            rotatedArray[i] = originalArray[i];
+        }
+
+        int largestValue = originalArray[0];
+        for (int i = 1; i < size; i++) {
+            if (originalArray[i] > largestValue) {
+                largestValue = originalArray[i];
+            }
+        }
+
+       
+        int firstElement = rotatedArray[0];
+        
+        for (int i = 0; i < size - 1; i++) {
+            rotatedArray[i] = rotatedArray[i + 1];
+        }
+        
+        rotatedArray[size - 1] = firstElement;
+
+        // Step 5: Display Results
+        System.out.println("==================RESULTS SUMMARY==================");
+        
+      
+        System.out.print("Original Array: [");
+        for (int i = 0; i < size; i++) {
+            System.out.print(originalArray[i] + (i < size - 1 ? ", " : ""));
+        }
+        System.out.println("]");
+
+
+        System.out.print("Rotated Array:  [");
+        for (int i = 0; i < size; i++) {
+            System.out.print(rotatedArray[i] + (i < size - 1 ? ", " : ""));
+        }
+        System.out.println("]");
+
+        System.out.println("Largest Value:  " + largestValue);
+        System.out.println("==========================================");
+
+        input.close();
+    }
+}
+                </code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Andrei D. de Ocampo | BSIT - OLSHCO</p>
+    </footer>
+
+</body>
+</html>
